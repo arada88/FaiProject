@@ -1,0 +1,13 @@
+<div>
+    <h2>My Task today</h2>
+    <ul *ngFor = 'let item of arraytask'>
+        <li>{{ item }} <button (click)= "deletetask(item)">Delete</button></li>
+    </ul>
+    <div>
+        Task: <input [(ngModel)] = 'task'/>
+        <button (click)="addtask()">Add</button>
+    </div>
+</div>
+
+
+

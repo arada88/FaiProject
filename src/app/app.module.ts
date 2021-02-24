@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TopbannerComponent } from './topbanner/topbanner.component';
 import { CategorymenuComponent } from './categorymenu/categorymenu.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { TodolistComponent } from './todolist/todolist.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     NavbarComponent,
     TopbannerComponent,
     CategorymenuComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
