@@ -11,3 +11,12 @@
         <button (click)="countNumber()">Count</button>
     </div>
 
+    <ul>
+        <li *ngFor="let item of items">
+        <span *ngIf="item !== 5">{{ item }}</span>
+        <b *ngIf="item === 5">{{ item }}</b>
+        </li>
+        </ul>
+
+    
+
