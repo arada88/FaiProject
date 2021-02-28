@@ -28,4 +28,8 @@ price: 500
   ngOnInit(): void {
   }
 
+  selectedProduct(product: Product) {
+    alert(`Product ${product.name} selected`);
+    }
+
 }
