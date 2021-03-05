@@ -1,0 +1,9 @@
+.container {
+    display: flex
+}
+.item-box {
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
