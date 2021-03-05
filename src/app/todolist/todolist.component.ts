@@ -14,9 +14,6 @@ export class TodolistComponent implements OnInit {
   addtask() {
     this.arraytask.push([this.task])
   }
-  deletetask(x){
-    this.arraytask = this.arraytask.filter(item => item !== x);
-  }
 
   ngOnInit(): void {
   }
