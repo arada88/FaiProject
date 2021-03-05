@@ -1,7 +1,7 @@
 <div>
     <h2>My Task today</h2>
     <ul *ngFor = 'let item of arraytask'>
-        <li>{{ item }} <button (click)= "deletetask(item)">Delete</button></li>
+        <li>{{ item }} </li>
     </ul>
     <div>
         Task: <input [(ngModel)] = 'task'/>
