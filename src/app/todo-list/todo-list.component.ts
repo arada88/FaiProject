@@ -14,6 +14,9 @@ export class TodoListComponent implements OnInit {
     this.tasks.push(this.task);
   }
  
+  deleteTask(taskIndex : number) {
+    this.tasks = this.tasks.filter((t, index) => index !== taskIndex);
+  }
 
   constructor() { }
 
