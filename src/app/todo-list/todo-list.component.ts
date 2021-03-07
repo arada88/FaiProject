@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Task } from '../task';
 import { TaskComponent } from '../task/task.component';
 
@@ -9,11 +9,15 @@ import { TaskComponent } from '../task/task.component';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
+  @ViewChildren(TaskComponent) taskComps: QueryList<TaskComponent>;
+
   tasks: Task[] = [];
   
-  //task: Task;
+ 
   taskName: string;
   taskDescription: string;
+
+  taskSelect: Task;
 
   addTask() {
     let tempTesk: Task = {
@@ -34,6 +38,19 @@ export class TodoListComponent implements OnInit {
       return v.toString(16);
     });
   }
+
+  selectedTask(taskComponent: TaskComponent) {
+    this.clearSelected();
+    taskComponent.isSelected = true;
+    this.taskSelect = taskComponent.taskObj;
+  }
+    clearSelected() {
+      this.taskComps.forEach(task => {
+        task.isSelected = false;
+      })
+    }
+  
+
   constructor() { }
 
   ngOnInit(): void {

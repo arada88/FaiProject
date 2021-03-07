@@ -2,7 +2,11 @@
 <div class="container">
    <p>My Tasks today</p>
 
-   <app-task *ngFor="let task of tasks" [taskObj]="task" (deleteTask)="deleteTask($event)"></app-task>
+   <app-task *ngFor="let task of tasks"
+    [taskObj]="task" 
+    (deleteTask)="deleteTask($event)" 
+    (taskClick)="selectedTask($event)">
+   </app-task>
    
    <div class="new-task">
       <p>Add Task</p>
@@ -13,6 +17,12 @@
          Description: <input type="text" [(ngModel)]="taskDescription">
       </div>
       <button (click)="addTask()">Add</button>
+   </div>
+
+   <div class="task-detail" *ngIf="taskSelect">
+     <h4>Task: {{ taskSelect.name}}</h4>
+     <b>Description</b>{{taskSelect.description}}
+
    </div>
 
 

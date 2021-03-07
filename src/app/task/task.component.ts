@@ -9,6 +9,9 @@ import { Task } from '../task';
 export class TaskComponent implements OnInit {
   @Input() taskObj: Task;
   @Output() deleteTask: EventEmitter<TaskComponent> = new EventEmitter();
+  @Output() taskClick: EventEmitter<TaskComponent> = new EventEmitter();
+
+  isSelected: Boolean;
 
   constructor() { }
 
@@ -17,6 +20,10 @@ export class TaskComponent implements OnInit {
 
   delete() {
     this.deleteTask.emit(this);
+  }
+
+  taskSelect() {
+    this.taskClick.emit(this);
   }
 
 }
