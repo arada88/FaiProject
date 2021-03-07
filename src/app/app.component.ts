@@ -1,28 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ProductListComponent } from './product-list/product-list.component';
+//import { ProductListComponent } from './product-list/product-list.component';
+//import { BackendService } from './backend.service' ;
+
 @Component({
 selector: 'app-root',
 templateUrl: './app.component.html',
 styles: []
 })
 export class AppComponent implements OnInit {
-@ViewChild('productList',{static:true})
-productList: ProductListComponent;
+//@ViewChild('productList',{static:true})
+//productList: ProductListComponent;
+
+
+//constructor(private backendService: BackendService) {}
+
 ngOnInit(): void {
-this.productList.products = [
-{
-name: 'ส้มโอ',
-price: 111
-},
-{
-name: 'แตงโม',
-price: 222
-},
-{
-name: 'มะพร้าวนํ้าหอม',
-price: 333
+//this.productList.products = this.backendService.getProducts();
+
 }
-];
-}
-constructor() {}
 }

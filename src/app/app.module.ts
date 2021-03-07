@@ -5,10 +5,39 @@ import { HomeComponent } from './home/home.component';
 import {BackendService } from './backend.service';
 import { CatalogModule } from './catalog/catalog.module';
 import { HomeModule } from './home/home.module';
-//import { ProductListComponent} from './product-list/product-list.component';
-//import { ProductItemComponent } from './product-item/product-item.component';
-//import { PanelComponent } from './panel/panel.component';
+import { RouterModule, Routes } from '@angular/router'; 
+import { LoginComponent } from './login/login.component';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductDetailComponent } from './catalog/product-detail/product-detail.component';
 
+const routes: Routes = [
+  {
+  path: 'home',
+  component: HomeComponent
+  },
+  {
+  path: '',
+  pathMatch: 'full',
+  redirectTo: 'home'
+  },
+  {
+  path: 'login',
+  component: LoginComponent
+  },
+  {
+  path: 'products',
+  component: ProductItemComponent
+  },
+  {
+    path: 'products/:id',
+    component: ProductDetailComponent
+  },
+  {
+  path: '**',
+  component: PageNotFoundComponent
+  }
+  ];
 
 @NgModule({
   declarations: [
@@ -16,9 +45,13 @@ import { HomeModule } from './home/home.module';
     HomeComponent
   ],
   imports: [
-    BrowserModule, CatalogModule, HomeModule
+    BrowserModule, CatalogModule, HomeModule,RouterModule.forRoot(routes)
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+
+
+ }
