@@ -1,0 +1,25 @@
+.container {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.main {
+    word-wrap: break-word;
+}
+.main > .main-config-name {
+    font-weight: bold;
+}
+.main > .main-config-remark {
+    font-weight: normal;
+    opacity: 0.5;
+}
+
+.details {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+.value > input {
+   width: 30vw;
+   border-radius: 3px;
+   border: 1px solid lightgray;
+}
